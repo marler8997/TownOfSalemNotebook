@@ -1,0 +1,374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Town of Salem Helper</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="light-theme" href="styleLight.css" />
+    <script type="text/javascript" src="script.js"></script>
+    
+    <!--This script should appear below your LINK stylesheet tags -->
+
+	<script src="styleswitch.js" type="text/javascript">
+    
+    /***********************************************
+    * Style Sheet Switcher v1.1- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * Please keep this notice intact
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+    ***********************************************/
+    
+    </script>
+</head>
+
+<body onclick="updateItems()">
+
+<!--Google Analytics-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42124139-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!--End Google Analytics-->
+
+<div id="content">
+<table class="fixed">
+	<col width="150px" />
+    <col width="30px" />
+    <col width="170px" />
+    <col width="117px" />
+	<tr>
+    	<td id="srole1"><span class="head">Role</span></td>
+        <td id="num1"><span class="head">#</span></td>
+        <td id="sname1"><span class="head">Name</span></td>
+        <td id="role1"><span class="head">Role</span></td>
+       	<td id="dead1"><span class="head" style="font-size: 14px;">Dead/Conf</span></td>
+        <td id="snum1"><span class="head">#</span></td>
+        <td id="name1"><span class="head">Name</span><div onclick="clearAll();" style="width: 25px; height: 25px; display: inline; padding-left: 80px;"><img id="refreshButton" src="images/refresh.png" style="position: absolute;" height="25" /></div></td>
+   	</tr>
+</table>
+<div class="tableDivs">
+<table id="col1" border="0" cellpadding="2" cellspacing="0">
+	<tr><td id="srole2"><span class="town">Jailor</span></td></tr>
+    <tr><td id="srole3"><span class="town">Town</span><span class="roleText"> Investigative</span></td></tr>
+    <tr><td id="srole4"><span class="town">Town</span><span class="roleText"> Investigative</span></td></tr>
+    <tr><td id="srole5"><span class="town">Town</span><span class="roleText"> Support</span></td></tr>
+    <tr><td id="srole6"><span class="town">Town</span><span class="roleText"> Support</span></td></tr>
+    <tr><td id="srole7"><span class="town">Town</span><span class="roleText"> Protective</span></td></tr>
+    <tr><td id="srole8"><span class="town">Town</span><span class="roleText"> Killing</span></td></tr>
+    <tr><td id="srole9"><span class="roleText">Random</span><span class="town"> Town</span></td></tr>
+    <tr><td id="srole10"><span class="mafia">Godfather</span></td></tr>
+    <tr><td id="srole11"><span class="mafia">Mafioso</span></td></tr>
+    <tr><td id="srole12"><span class="roleText">Random</span><span class="mafia"> Mafia</span></td></tr>
+    <tr><td id="srole13"><span class="neutral">Neutral</span><span class="roleText"> Killing</span></td></tr>
+    <tr><td id="srole14"><span class="neutral">Neutral</span><span class="roleText"> Evil</span></td></tr>
+    <tr><td id="srole15"><span class="neutral">Neutral</span><span class="roleText"> Benign</span></td></tr>
+    <tr><td id="srole16"><span class="any">Any</span></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0" style="text-align:center;">
+	<tr><td id="num2"><input type="text" id="role1Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num3"><input type="text" id="role2Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num4"><input type="text" id="role3Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num5"><input type="text" id="role4Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num6"><input type="text" id="role5Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num7"><input type="text" id="role6Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num8"><input type="text" id="role7Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num9"><input type="text" id="role8Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num10"><input type="text" id="role9Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num11"><input type="text" id="role10Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num12"><input type="text" id="role11Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num13"><input type="text" id="role12Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num14"><input type="text" id="role13Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num15"><input type="text" id="role14Num" class="roleNum" onclick="select()" /></td></tr>
+    <tr><td id="num16"><input type="text" id="role15Num" class="roleNum" onclick="select()" /></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0">
+	<tr><td id="sname2" width="170"><span id="role1Name"></span></td></tr>
+    <tr><td id="sname3"><span id="role2Name"></span></td></tr>
+    <tr><td id="sname4"><span id="role3Name"></span></td></tr>
+    <tr><td id="sname5"><span id="role4Name"></span></td></tr>
+    <tr><td id="sname6"><span id="role5Name"></span></td></tr>
+    <tr><td id="sname7"><span id="role6Name"></span></td></tr>
+    <tr><td id="sname8"><span id="role7Name"></span></td></tr>
+    <tr><td id="sname9"><span id="role8Name"></span></td></tr>
+    <tr><td id="sname10"><span id="role9Name"></span></td></tr>
+    <tr><td id="sname11"><span id="role10Name"></span></td></tr>
+    <tr><td id="sname12"><span id="role11Name"></span></td></tr>
+    <tr><td id="sname13"><span id="role12Name"></span></td></tr>
+    <tr><td id="sname14"><span id="role13Name"></span></td></tr>
+    <tr><td id="sname15"><span id="role14Name"></span></td></tr>
+    <tr><td id="sname16"><span id="role15Name"></span></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0">
+    <tr><td id="role2"><span class="town">Jailor</span></td></tr>
+	<tr>
+    	<td id="role3">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Sheriff</option>
+                <option class="town">Investigator</option>
+                <option class="town">Lookout</option>
+                <option class="town">Spy</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role4">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Sheriff</option>
+                <option class="town">Investigator</option>
+                <option class="town">Lookout</option>
+                <option class="town">Spy</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role5">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Mayor</option>
+                <option class="town">Escort</option>
+                <option class="town">Medium</option>
+                <option class="town">Retributionist</option>
+                <option class="town">Transporter</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role6">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Mayor</option>
+                <option class="town">Escort</option>
+                <option class="town">Medium</option>
+                <option class="town">Retributionist</option>
+                <option class="town">Transporter</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role7">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Bodyguard</option>
+                <option class="town">Doctor</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role8">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Veteran</option>
+                <option class="town">Vigilante</option>
+				<option class="town">Vampire Hunter</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role9">
+            <select class="town roles">
+                <option>-</option>
+                <option class="town">Sheriff</option>
+                <option class="town">Investigator</option>
+                <option class="town">Lookout</option>
+                <option class="town">Spy</option>
+                <option class="town">Mayor</option>
+                <option class="town">Escort</option>
+                <option class="town">Medium</option>
+                <option class="town">Retributionist</option>
+                <option class="town">Transporter</option>
+                <option class="town">Bodyguard</option>
+                <option class="town">Doctor</option>
+                <option class="town">Veteran</option>
+                <option class="town">Vigilante</option>
+				<option class="town">Vampire Hunter</option>
+            </select>
+        </td>
+    </tr>
+    <tr><td id="role10"><span class="mafia">Godfather</span></td></tr>
+    <tr><td id="role11"><span class="mafia">Mafioso</span></td></tr>
+    <tr>
+    	<td id="role12">
+            <select class="mafia roles">
+                <option>-</option>
+                <option class="mafia">Blackmailer</option>
+                <option class="mafia">Consigliere</option>
+                <option class="mafia">Consort</option>
+                <option class="mafia">Disguiser</option>
+                <option class="mafia">Janitor</option>
+                <option class="mafia">Framer</option>
+                <option class="mafia">Forger</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role13">
+            <select class="roles" id="rolesNK" onchange="changeRolesNK()">
+                <option>-</option>
+                <option class="arsonist">Arsonist</option>
+                <option class="werewolf">Werewolf</option>
+                <option class="serialkiller">Serial Killer</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role14">
+            <select class="roles" id="rolesNE" onchange="changeRolesNE()">
+                <option>-</option>
+                <option class="witch">Witch</option>
+                <option class="jester">Jester</option>
+                <option class="neutral">Executioner</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role15">
+            <select class="roles" id="rolesNB" onchange="changeRolesNB()">
+                <option>-</option>
+                <option class="survivor">Survivor</option>
+                <option class="amnesiac">Amnesiac</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td id="role16">
+            <select class="roles" id="rolesAny" onchange="changeRolesAny()">
+                <option>-</option>
+                <option class="town">Sheriff</option>
+                <option class="town">Investigator</option>
+                <option class="town">Lookout</option>
+                <option class="town">Spy</option>
+                <option class="town">Mayor</option>
+                <option class="town">Escort</option>
+                <option class="town">Medium</option>
+                <option class="town">Retributionist</option>
+                <option class="town">Transporter</option>
+                <option class="town">Bodyguard</option>
+                <option class="town">Doctor</option>
+                <option class="town">Veteran</option>
+                <option class="town">Vigilante</option>
+				<option class="town">Vampire Hunter</option>
+                <option class="mafia">Blackmailer</option>
+                <option class="mafia">Consigliere</option>
+                <option class="mafia">Consort</option>
+                <option class="mafia">Disguiser</option>
+                <option class="mafia">Janitor</option>
+                <option class="mafia">Framer</option>
+                <option class="mafia">Forger</option>
+                <option class="arsonist">Arsonist</option>
+                <option class="werewolf">Werewolf</option>
+                <option class="serialkiller">Serial Killer</option>
+                <option class="witch">Witch</option>
+                <option class="jester">Jester</option>
+                <option class="neutral">Executioner</option>
+                <option class="survivor">Survivor</option>
+                <option class="amnesiac">Amnesiac</option>
+				<option class="vampire">Vampire</option>
+            </select>
+        </td>
+    </tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0">
+	<tr><td id="dead2"><button type="button" id="btnDeath1" class="btnDeath"></button></td></tr>
+    <tr><td id="dead3"><button type="button" id="btnDeath2" class="btnDeath"></button></td></tr>
+    <tr><td id="dead4"><button type="button" id="btnDeath3" class="btnDeath"></button></td></tr>
+    <tr><td id="dead5"><button type="button" id="btnDeath4" class="btnDeath"></button></td></tr>
+    <tr><td id="dead6"><button type="button" id="btnDeath5" class="btnDeath"></button></td></tr>
+    <tr><td id="dead7"><button type="button" id="btnDeath6" class="btnDeath"></button></td></tr>
+    <tr><td id="dead8"><button type="button" id="btnDeath7" class="btnDeath"></button></td></tr>
+    <tr><td id="dead9"><button type="button" id="btnDeath8" class="btnDeath"></button></td></tr>
+    <tr><td id="dead10"><button type="button" id="btnDeath9" class="btnDeath"></button></td></tr>
+    <tr><td id="dead11"><button type="button" id="btnDeath10" class="btnDeath"></button></td></tr>
+    <tr><td id="dead12"><button type="button" id="btnDeath11" class="btnDeath"></button></td></tr>
+    <tr><td id="dead13"><button type="button" id="btnDeath12" class="btnDeath"></button></td></tr>
+    <tr><td id="dead14"><button type="button" id="btnDeath13" class="btnDeath"></button></td></tr>
+    <tr><td id="dead15"><button type="button" id="btnDeath14" class="btnDeath"></button></td></tr>
+    <tr><td id="dead16"><button type="button" id="btnDeath15" class="btnDeath"></button></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0">
+	<tr><td id="conf2"><button type="button" id="btnConf1" class="btnConf"></button></td></tr>
+    <tr><td id="conf3"><button type="button" id="btnConf2" class="btnConf"></button></td></tr>
+    <tr><td id="conf4"><button type="button" id="btnConf3" class="btnConf"></button></td></tr>
+    <tr><td id="conf5"><button type="button" id="btnConf4" class="btnConf"></button></td></tr>
+    <tr><td id="conf6"><button type="button" id="btnConf5" class="btnConf"></button></td></tr>
+    <tr><td id="conf7"><button type="button" id="btnConf6" class="btnConf"></button></td></tr>
+    <tr><td id="conf8"><button type="button" id="btnConf7" class="btnConf"></button></td></tr>
+    <tr><td id="conf9"><button type="button" id="btnConf8" class="btnConf"></button></td></tr>
+    <tr><td id="conf10"><button type="button" id="btnConf9" class="btnConf"></button></td></tr>
+    <tr><td id="conf11"><button type="button" id="btnConf10" class="btnConf"></button></td></tr>
+    <tr><td id="conf12"><button type="button" id="btnConf11" class="btnConf"></button></td></tr>
+    <tr><td id="conf13"><button type="button" id="btnConf12" class="btnConf"></button></td></tr>
+    <tr><td id="conf14"><button type="button" id="btnConf13" class="btnConf"></button></td></tr>
+    <tr><td id="conf15"><button type="button" id="btnConf14" class="btnConf"></button></td></tr>
+    <tr><td id="conf16"><button type="button" id="btnConf15" class="btnConf"></button></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0" style="text-align:center;" class="head">
+	<tr><td id="snum2"><span id="snumSpan1">1</span></td></tr>
+    <tr><td id="snum3"><span id="snumSpan2">2</span></td></tr>
+    <tr><td id="snum4"><span id="snumSpan3">3</span></td></tr>
+    <tr><td id="snum5"><span id="snumSpan4">4</span></td></tr>
+    <tr><td id="snum6"><span id="snumSpan5">5</span></td></tr>
+    <tr><td id="snum7"><span id="snumSpan6">6</span></td></tr>
+    <tr><td id="snum8"><span id="snumSpan7">7</span></td></tr>
+    <tr><td id="snum9"><span id="snumSpan8">8</span></td></tr>
+    <tr><td id="snum10"><span id="snumSpan9">9</span></td></tr>
+    <tr><td id="snum11"><span id="snumSpan10">10</span></td></tr>
+    <tr><td id="snum12"><span id="snumSpan11">11</span></td></tr>
+    <tr><td id="snum13"><span id="snumSpan12">12</span></td></tr>
+    <tr><td id="snum14"><span id="snumSpan13">13</span></td></tr>
+    <tr><td id="snum15"><span id="snumSpan14">14</span></td></tr>
+    <tr><td id="snum16"><span id="snumSpan15">15</span></td></tr>
+</table>
+</div>
+<div class="tableDivs">
+<table border="0" cellpadding="2" cellspacing="0">
+	<tr><td id="name2"><input type="text" id="player1Name" class="playerName" /></td></tr>
+    <tr><td id="name3"><input type="text" id="player2Name" class="playerName" /></td></tr>
+    <tr><td id="name4"><input type="text" id="player3Name" class="playerName" /></td></tr>
+    <tr><td id="name5"><input type="text" id="player4Name" class="playerName" /></td></tr>
+    <tr><td id="name6"><input type="text" id="player5Name" class="playerName" /></td></tr>
+    <tr><td id="name7"><input type="text" id="player6Name" class="playerName" /></td></tr>
+    <tr><td id="name8"><input type="text" id="player7Name" class="playerName" /></td></tr>
+    <tr><td id="name9"><input type="text" id="player8Name" class="playerName" /></td></tr>
+    <tr><td id="name10"><input type="text" id="player9Name" class="playerName" /></td></tr>
+    <tr><td id="name11"><input type="text" id="player10Name" class="playerName" /></td></tr>
+    <tr><td id="name12"><input type="text" id="player11Name" class="playerName" /></td></tr>
+    <tr><td id="name13"><input type="text" id="player12Name" class="playerName" /></td></tr>
+    <tr><td id="name14"><input type="text" id="player13Name" class="playerName" /></td></tr>
+    <tr><td id="name15"><input type="text" id="player14Name" class="playerName" /></td></tr>
+    <tr><td id="name16"><input type="text" id="player15Name" class="playerName" /></td></tr>
+</table>
+</div>
+</div>
+<div style="margin-top: 5px">
+<span style="font-size: 12px; margin-left:10px;">Created by Friedpanseller | Friedpanseller.com | </span>
+<form id="switchform" style="display: inline-block">
+	<input type="button" name="choice" value="Dark Theme" onClick="chooseStyle('none', 60); darkTheme();" class="styleChooser">
+	<input type="button" name="choice" value="Light Theme" onClick="chooseStyle('light-theme', 60); lightTheme();" class="styleChooser">
+</form>
+<span style="font-size: 12px;"> | Change theme before you start | </span>
+<!--<span style="color: blue; font-size: 14px;" onclick="location.href='indexALT.html';"> Click here for Light Theme</span>-->
+</div>
+</body>
+<script>
+	window.onload = setListeners();
+</script>
+</html>
